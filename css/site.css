@@ -1,9 +1,5 @@
 @import url('reset.css');
-
-@font-face {
-  font-family: Milano;
-  src: url("../fonts/Milano_regular.ttf");
-}
+@import url(http://fonts.googleapis.com/css?family=Abel|Changa+One);
 
 *,
 *:before,
@@ -22,27 +18,6 @@
   height: 0;
 }
 
-.desaturate
-{
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter: gray;
-    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
-}
-
-.strip-input
-{
-  outline-style: none;
-  border:none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  &:focus
-  {
-    outline: none;
-  }
-}
-
 .opacity {
   zoom: 1;
   filter: alpha(opacity=50);
@@ -57,104 +32,144 @@ html {
 }
 
 body {
-  background: url("../images/rygo-bgV3.jpg") right -100px no-repeat;
-  background-size: cover;
+  font-family: 'Abel', sans-serif;
+  color: #414142;
   height: 100%;
-  font-family: Milano;
-  min-width: 880px;
   position: relative;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
-  font-size: 80px;
+  font-size: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Changa One', sans-serif;
 }
 
 h2 {
-  font-size: 34px;
-  margin-bottom: 70px;
+  font-size: 30px;
+  margin: 10px 0 30px 0;
+  color: #f9ed33;
 }
 
 h3 {
-  font-family: 'Cedarville Cursive', cursive;
   font-size: 44px;
 }
 
 p {
-  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
   line-height: 1.4em;
   margin-bottom: 10px;
 }
 
 header {
-  padding-top: 6%;
-  margin-left: 6%;
+  text-align: center;
+  padding: 40px;
+  background: #414142;
+  color: #cecece;
 }
 
-section.text {
-  width: 45%;
-  text-align: left;
-  margin-left: 6%;
-  padding-bottom: 50px;
+header .container {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-.buttons li {
-  display: inline-block;
-  font-size: 40px;
-  margin-right: 50px;
-  margin-bottom: 30px;
-  margin-top: 30px;
-  border: 1px dashed black;
-  padding: 15px 15px 7px 15px;
+#text {
+  padding: 40px 0;
+  font-size: 14pt;
+  margin-bottom: 34px;
 }
 
-.buttons li:hover {
+.text {
+    max-width: 700px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+button {
+  font-size: 25px;
+  border: 1px solid rgba(206,206,206,.5);
+  text-transform: uppercase;
+  border-radius: 2px;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+  padding: 5px 10px;
+  z-index: 1;
+}
+
+button:hover {
   cursor: pointer;
+  background: #e6e86d;
+  color: #414142;
+  border: 1px solid #414142;
 }
 
-.medium-text, .long-text {
-  display: none;
+footer {
+  background: rgba(65,65,66,.9);
+  color: #ccc;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 11pt;
+  height: 34px;
+
 }
 
-.credit {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 12px;
-
+footer span {
+    margin: 0 20px;
 }
 
-.github-fork-ribbon {
-  background-color: #333;
+footer a {
+  color: #fff;
 }
 
-@media (max-width: 1250px) {
-  body {
-    /*background: url("../images/rygo-bgV4.jpg") right top no-repeat;*/
-    background: url("../images/rygo-right-arm-crop-wide.jpg") right top no-repeat;
+:focus {
+  outline: none;
+}
+
+::selection {
+  background: #f9ed33; 
+  color: #414142;
+}
+::-moz-selection {
+  background: #f9ed33; 
+  color: #414142;
+}
+
+
+@media (max-width: 767px) {
+  #text {
+    padding: 20px;
   }
-  section.text {
-  width: 40%;
+  h1 {
+    font-size: 40px;
   }
-}
-
-@media (max-width: 1115px) {
-  body {
-    /*background: url("../images/rygo-bgV4.jpg") right top no-repeat;*/
-    background: url("../images/v6.jpg") right top no-repeat;
+  h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
   }
-  section.text {
-  width: 45%;
+  header {
+    padding: 30px;
   }
-}
-
-@media (max-width: 945px) {
-  body {
-    /*background: url("../images/rygo-bgV4.jpg") right top no-repeat;*/
-    background: url("../images/v6.jpg") right top no-repeat;
+  img {
+    width: 80px;
+    height: auto;
   }
-  section.text {
-  width: 40%;
+  #text {
+    margin-bottom: 55px;
+    padding-bottom: 65px;
+  }
+  footer {
+    height: 55px;
+  }
+  footer span {
+    display: block;
+    margin: 3px auto;
   }
 }
